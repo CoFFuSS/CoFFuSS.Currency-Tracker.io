@@ -42,4 +42,6 @@ export interface State {
   minPrice?: number;
   maxPrice?: number;
   selectedDate?: string;
+  minPriceError?: string;
+  maxPriceError?: string;
 }

@@ -39,7 +39,16 @@ export const ChartInput = styled.input`
 
 export const ButtonContainer = styled.div`
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ErrorMessage = styled.p`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacing(12)};
+    ${theme.typography.variant.h6};
+    color: ${theme.colors.secondary};
+  `}
 `;
 
 const fadeIn = keyframes`

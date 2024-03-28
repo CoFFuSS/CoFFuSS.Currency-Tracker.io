@@ -30,11 +30,26 @@
 
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "types": ["cypress", "node"]
     }
   },
 
-  "exclude": ["node_modules", "dist", "build", ".vscode"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    ".vscode",
+    "./cypress.config.ts",
+    "cypress",
+    "**/*.cy.tsx"
+  ],
 
-  "include": ["typings/*.d.ts", "**/*.ts", "**/*.tsx", "src/mocks/browser.js", "src/mocks/handlers.js"]
+  "include": [
+    "typings/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/mocks/browser.js",
+    "src/mocks/handlers.js"
+  ]
 }

@@ -39,3 +39,5 @@ describe('getCurrencyRelation', () => {
     expect(result).toEqual('1.000000');
   });
 });
+
+export {};

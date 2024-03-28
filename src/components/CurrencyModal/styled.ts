@@ -32,7 +32,7 @@ export const Backdrop = styled.div`
   background: rgb(0 0 0 / 30%);
 `;
 
-const ModalOpenAnimation = keyframes`
+const modalOpenAnimation = keyframes`
   0% {
     opacity: 0;
     transform: scale(0.7);
@@ -43,7 +43,7 @@ const ModalOpenAnimation = keyframes`
   }
 `;
 
-const ModalCloseAnimation = keyframes`
+const modalCloseAnimation = keyframes`
   0% {
     opacity: 1;
     transform: scale(1);
@@ -68,10 +68,10 @@ export const ModalWindow = styled.div<{ isShown: boolean }>`
 
     ${isShown
       ? css`
-          animation: ${ModalOpenAnimation} 0.3s forwards;
+          animation: ${modalOpenAnimation} 0.3s forwards;
         `
       : css`
-          animation: ${ModalCloseAnimation} 0.3s forwards;
+          animation: ${modalCloseAnimation} 0.3s forwards;
         `}
   `}
 `;

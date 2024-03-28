@@ -15,6 +15,7 @@ export const ThemeSwitcher = () => {
   return (
     <Switcher checked={isChecked}>
       <input
+        name='themeSwitcher'
         onChange={handleToggle}
         id='checkbox'
         type='checkbox'

@@ -40,6 +40,8 @@ export const generateRandomCurrencyDataArray = (
   return currencyDataArray;
 };
 
+export const isValidNumberInput = (value: string): boolean => /^\d*\.?\d*$/.test(value);
+
 export const getChartDataset = (dataset: CandlestickData[]) => ({
   labels: [],
   datasets: [

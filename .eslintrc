@@ -1,5 +1,5 @@
 {
-  "plugins": ["react", "sonarjs", "import", "jsx-a11y", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "sonarjs", "import", "jsx-a11y", "@typescript-eslint", "prettier", "cypress"],
   "extends": [
     "airbnb",
     "airbnb-typescript",
@@ -8,11 +8,13 @@
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
-    "plugin:sonarjs/recommended"
+    "plugin:sonarjs/recommended",
+    "plugin:cypress/recommended"
   ],
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "cypress/globals": true
   },
   "globals": {
     "JSX": true
@@ -26,12 +28,13 @@
     "project": ["./tsconfig.json"],
     "sourceType": "module"
   },
-	
+
 	"settings": {
     "import/resolver": {
       "typescript": {}
     }
   },
+  "ignorePatterns": ["cypress.config.ts", "**/*.cy.ts"],
 
   "rules": {
 		"import/no-unresolved": "error",
@@ -153,6 +156,6 @@
     "no-fallthrough": "warn",
 
     "prettier/prettier": "warn"
-		
+
   }
 }

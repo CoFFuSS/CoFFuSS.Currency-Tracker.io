@@ -16,6 +16,7 @@ import {
   generateRandomCurrencyDataArray,
   getChartDataset,
   getChartOptions,
+  isValidNumberInput,
   labelProperties,
 } from './utils';
 import {
@@ -23,6 +24,7 @@ import {
   ChartContainer,
   ChartInput,
   ControlBlock,
+  ErrorMessage,
   InputLabel,
   SubmitButton,
 } from './styled';
@@ -43,6 +45,8 @@ export class TimelinePage extends PureComponent<Props, State> implements Observe
       maxPrice: 1000,
 
       selectedDate: new Date().toISOString().split('T')[0],
+      minPriceError: '',
+      maxPriceError: '',
     };
   }
 
@@ -76,25 +80,27 @@ export class TimelinePage extends PureComponent<Props, State> implements Observe
 
   handleInputChange = (field: string) => (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
-    this.setState({ [field]: value });
+
+    this.setState({ [field]: value } as Pick<State, keyof State>);
   };
 
   handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     const { minPrice, maxPrice, selectedDate } = this.state;
 
-    const { scrollY } = window;
+    if (this.validateInputs()) {
+      const { scrollY } = window;
 
-    const newDataset = generateRandomCurrencyDataArray(
-      Number(minPrice!),
-      Number(maxPrice!),
-      selectedDate!,
-    );
+      const newDataset = generateRandomCurrencyDataArray(
+        Number(minPrice!),
+        Number(maxPrice!),
+        selectedDate!,
+      );
 
-    currencyObservable.setData(newDataset, Number(minPrice!), Number(maxPrice!));
+      currencyObservable.setData(newDataset, Number(minPrice!), Number(maxPrice!));
 
-    window.scrollTo(0, scrollY);
+      window.scrollTo(0, scrollY);
+    }
   };
 
   // eslint-disable-next-line react/no-unused-class-component-methods
@@ -116,8 +122,32 @@ export class TimelinePage extends PureComponent<Props, State> implements Observe
     }
   };
 
+  validateInputs = () => {
+    const { minPrice, maxPrice } = this.state;
+    const errors = {
+      minPrice: '',
+      maxPrice: '',
+    };
+
+    if (!isValidNumberInput(String(minPrice))) {
+      errors.minPrice = 'Please enter a valid number';
+    }
+
+    if (!isValidNumberInput(String(maxPrice))) {
+      errors.maxPrice = 'Please enter a valid number';
+    }
+
+    if (parseFloat(String(minPrice)) > parseFloat(String(maxPrice))) {
+      errors.minPrice = 'Minimum price cannot be greater than maximum price';
+    }
+
+    this.setState({ minPriceError: errors.minPrice, maxPriceError: errors.maxPrice });
+
+    return Object.values(errors).every((error) => error === '');
+  };
+
   render() {
-    const { minPrice, maxPrice, selectedDate } = this.state;
+    const { minPrice, maxPrice, selectedDate, maxPriceError, minPriceError } = this.state;
     const inputValues: Record<string, string | number> = {
       selectedDate: selectedDate ?? '',
       minPrice: Number(minPrice),
@@ -141,8 +171,11 @@ export class TimelinePage extends PureComponent<Props, State> implements Observe
               />
             </InputLabel>
           ))}
+
           <ButtonContainer>
             <SubmitButton type='submit'>Submit</SubmitButton>
+            {minPriceError && <ErrorMessage>{minPriceError}</ErrorMessage>}
+            {maxPriceError && <ErrorMessage>{maxPriceError}</ErrorMessage>}
           </ButtonContainer>
         </ControlBlock>
 

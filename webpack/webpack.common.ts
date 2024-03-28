@@ -92,9 +92,6 @@ const commonConfig: Configuration = {
     new ProgressPlugin((percentage, message, ...args) => {
       console.info(percentage, message, ...args);
     }),
-    // new DefinePlugin({
-    //   REACT_APP_MAPBOX_API_KEY: JSON.stringify(process.env.REACT_APP_MAPBOX_API_KEY),
-    // }),
     new Dotenv({
       path: './.env',
       allowEmptyValues: true,
