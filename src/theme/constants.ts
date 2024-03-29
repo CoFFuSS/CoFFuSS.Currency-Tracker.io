@@ -53,9 +53,9 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
 
     ${media.lg`
 			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(76)};
-    	font-weight: 600;
-    	line-height: ${114 / 76};
+      font-size: ${pxToRem(76)};
+      font-weight: 600;
+      line-height: ${114 / 76};
 		`}
   `,
 
@@ -67,9 +67,9 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
 
     ${media.lg`
 			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(35)};
-    	font-weight: 400;
-    	line-height: ${50 / 35};
+      font-size: ${pxToRem(35)};
+      font-weight: 400;
+      line-height: ${50 / 35};
 		`}
   `,
   h3: css`
@@ -80,9 +80,9 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     ${media.lg`
 
 			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(32)};
-    	font-weight: 300;
-    	line-height: ${41 / 32};
+      font-size: ${pxToRem(32)};
+      font-weight: 300;
+      line-height: ${41 / 32};
 		`}
   `,
   h4: css`
@@ -92,9 +92,9 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     line-height: ${24 / 16};
     ${media.lg`
 			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(28)};
-    	font-weight: 400;
-    	line-height: ${42 / 28};
+      font-size: ${pxToRem(28)};
+      font-weight: 400;
+      line-height: ${42 / 28};
 		`}
   `,
   h5: css`
@@ -105,9 +105,9 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
 
     ${media.lg`
 			font-family: ${THEME_FONT_FAMILIES.primary};
-   		font-size: ${pxToRem(24)};
-   		font-weight: 400;
-   		line-height: ${36 / 24};
+      font-size: ${pxToRem(24)};
+      font-weight: 400;
+      line-height: ${36 / 24};
 		`}
   `,
   h6: css`
@@ -126,9 +126,9 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
   p1: css`
     ${media.xs`
 			font-family: ${THEME_FONT_FAMILIES.primary},
-    	font-size: ${pxToRem(12)},
-    	font-weight: 300,
-    	line-height: ${22 / 12},
+      font-size: ${pxToRem(12)},
+      font-weight: 300,
+      line-height: ${22 / 12},
 		`}
   `,
   p2: css`
@@ -139,9 +139,9 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
 
     ${media.lg`
 			font-family: ${THEME_FONT_FAMILIES.primary};
-   		font-size: ${pxToRem(26)};
-   		font-weight: 600;
-   		line-height: ${39 / 26};
+      font-size: ${pxToRem(26)};
+      font-weight: 600;
+      line-height: ${39 / 26};
 
 		`}
   `,

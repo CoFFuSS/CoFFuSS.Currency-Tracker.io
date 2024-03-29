@@ -42,8 +42,7 @@
     ".vscode",
     "./cypress.config.ts",
     "cypress",
-    "**/*.cy.tsx",
-    "./cypress/support/e2e.ts"
+    "**/*.cy.tsx"
   ],
 
   "include": [
@@ -51,6 +50,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/mocks/browser.js",
-    "src/mocks/handlers.js"
+    "src/mocks/handlers.js",
+    "cypress/support/**/*.ts"
   ]
 }

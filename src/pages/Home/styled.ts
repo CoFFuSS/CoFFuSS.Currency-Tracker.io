@@ -37,11 +37,11 @@ export const CardContainer = styled.div`
 			flex-direction: row;
 			row-gap: 0;
 			display: default;
-    	flex-wrap: wrap;
-    	gap: ${theme.spacing(20)};
-    	justify-content: space-between;
+      flex-wrap: wrap;
+      gap: ${theme.spacing(20)};
+      justify-content: space-between;
 
-    	margin-bottom: ${theme.spacing(32)};
+      margin-bottom: ${theme.spacing(32)};
 	`}
   `}
 `;
@@ -70,8 +70,8 @@ export const Card = styled.div`
     ${theme.media.md`
 			width: calc(50% - ${theme.spacing(120)});
 			max-width: ${theme.spacing(520)};
-    	flex-basis: calc(50% - ${theme.spacing(120)});
-    	flex-grow: 0;
+      flex-basis: calc(50% - ${theme.spacing(120)});
+      flex-grow: 0;
 		`}
   `}
 `;
@@ -134,8 +134,8 @@ export const LoadingImage = styled(Icon)`
     width: ${theme.spacing(216)};
     height: ${theme.spacing(216)};
     ${theme.media.lg`
-		  width: ${theme.spacing(460)};
-    	height: ${theme.spacing(460)};
+      width: ${theme.spacing(460)};
+      height: ${theme.spacing(460)};
 		`}
   `}
 `;
