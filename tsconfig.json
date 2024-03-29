@@ -42,7 +42,8 @@
     ".vscode",
     "./cypress.config.ts",
     "cypress",
-    "**/*.cy.tsx"
+    "**/*.cy.tsx",
+    "./cypress/support/e2e.ts"
   ],
 
   "include": [

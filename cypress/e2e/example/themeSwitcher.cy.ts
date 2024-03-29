@@ -1,3 +1,4 @@
+
 describe('ThemeSwitcher', () => {
   it('should toggle the theme when the switch is clicked', () => {
     cy.visit('http://localhost:8080/');

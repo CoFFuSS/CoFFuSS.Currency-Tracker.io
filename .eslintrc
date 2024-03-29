@@ -34,7 +34,7 @@
       "typescript": {}
     }
   },
-  "ignorePatterns": ["cypress.config.ts", "**/*.cy.ts"],
+  "ignorePatterns": ["cypress.config.ts", "**/*.cy.ts", "cypress/support/e2e.ts"],
 
   "rules": {
 		"import/no-unresolved": "error",
