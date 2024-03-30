@@ -18,7 +18,7 @@ export const Container = styled.div`
     ${theme.media.lg`
       height: ${theme.spacing(44)};
       border: none;
-		`}
+      `}
   `}
 `;
 
@@ -29,7 +29,7 @@ export const Content = styled.div<{ isOpen: boolean }>`
     background-color: ${theme.colors.primary};
     ${theme.media.lg`
       display: flex;
-		`}
+      `}
   `}
 `;
 
@@ -37,8 +37,6 @@ export const InnerText = styled.div`
   ${({ theme }) => css`
     ${theme.typography.variant.h5};
     color: ${theme.colors.gray5};
-    ${theme.media.lg`
-		`}
   `}
 `;
 
@@ -46,8 +44,6 @@ export const TitleText = styled.span`
   ${({ theme }) => css`
     color: ${theme.colors.secondary};
     ${theme.typography.variant.h4}
-    ${theme.media.lg`
-		`}
   `}
 `;
 
@@ -57,7 +53,7 @@ export const ArrowIcon = styled(Icon)`
 
     ${theme.media.lg`
       display: none;
-	`}
+      `}
   `}
 `;
 

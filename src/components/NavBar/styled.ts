@@ -21,7 +21,9 @@ export const Container = styled.nav`
     padding-left: ${theme.spacing(30)};
 
     background-color: ${theme.colors.primary};
-    ${theme.media.lg`height: ${theme.spacing(100)}`}
+    ${theme.media.lg`
+      height: ${theme.spacing(100)}
+      `}
   `}
 `;
 
@@ -30,8 +32,9 @@ export const ImageContainer = styled(Link)`
     width: ${theme.spacing(30)};
     height: ${theme.spacing(12)};
     ${theme.media.lg`
-		width: ${theme.spacing(40)};
-    height: ${theme.spacing(40)};`}
+      width: ${theme.spacing(40)};
+      height: ${theme.spacing(40)};
+      `}
   `};
 `;
 
@@ -41,7 +44,8 @@ export const NavBarLogo = styled(Logo)`
     width: ${theme.spacing(12)};
     height: ${theme.spacing(12)};
     ${theme.media.lg`
-		width: ${theme.spacing(40)};
-    height: ${theme.spacing(40)};`}
+      width: ${theme.spacing(40)};
+      height: ${theme.spacing(40)};
+      `}
   `};
 `;

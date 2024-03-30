@@ -14,9 +14,8 @@ export const Wrapper = styled.div`
     outline: 0;
 
     ${theme.media.lg`
-    width: ${theme.spacing(600)};
-
-		`}
+      width: ${theme.spacing(600)};
+      `}
   `}
 `;
 
@@ -128,8 +127,8 @@ export const Content = styled.div`
     height: ${theme.spacing(150)};
     padding: ${theme.spacing(10)};
     ${theme.media.lg`
-			height: ${theme.spacing(200)};
-		`}
+      height: ${theme.spacing(200)};
+      `}
   `}
 `;
 
@@ -143,9 +142,9 @@ export const InfoContainer = styled.div`
     margin-bottom: ${theme.spacing(10)};
 
     ${theme.media.lg`
-    	width: ${theme.spacing(400)};
-			align-items: center;
-		`}
+      width: ${theme.spacing(400)};
+      align-items: center;
+      `}
   `}
 `;
 

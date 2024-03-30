@@ -32,13 +32,13 @@ export const Switcher = styled.label<{ checked: boolean }>`
 
       transition: 0.3s;
       ${theme.media.lg`
-			width: ${theme.spacing(22)};
-      height: ${theme.spacing(23)};`}
+        width: ${theme.spacing(22)};
+        height: ${theme.spacing(23)};
+        `}
     }
     ${theme.media.lg`
-		width: ${theme.spacing(48)};
-		height: ${theme.spacing(24)};
-
-		`}
+      width: ${theme.spacing(48)};
+      height: ${theme.spacing(24)};
+      `}
   `}
 `;

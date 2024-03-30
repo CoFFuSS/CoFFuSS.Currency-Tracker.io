@@ -9,7 +9,7 @@ export const MapContainer = styled.div`
 
     ${theme.media.lg`
       height: ${theme.spacing(460)};
-		`}
+      `}
   `}
 `;
 
@@ -43,9 +43,9 @@ export const SearchInput = styled.input`
     height: ${theme.spacing(30)};
 
     ${theme.media.lg`
-			width: ${theme.spacing(400)};
+      width: ${theme.spacing(400)};
       height: ${theme.spacing(25)};
-`}
+      `}
     ${theme.typography.variant.h6}
     background-color: ${theme.colors.gray5};
     border: ${theme.spacing(20)} solid ${theme.colors.gray5};
@@ -72,6 +72,6 @@ export const LoadingImage = styled(Icon)`
     ${theme.media.lg`
       width: ${theme.spacing(460)};
       height: ${theme.spacing(460)};
-		`}
+      `}
   `}
 `;
