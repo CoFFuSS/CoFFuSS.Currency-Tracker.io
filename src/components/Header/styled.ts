@@ -1,36 +1,131 @@
-import { styled } from 'styled-components';
+import styled, { css } from 'styled-components';
 
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+import Logo from '@/assets/images/HeaderLogo.svg';
 
-export const StyledHeader = styled.header`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const HeaderContainer = styled.header`
+  ${({ theme }) => css`
+    cursor: default;
 
-  height: ${({ theme }) => theme.spaces.xmmmm}px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-  background: rgb(0 0 0);
-  background: linear-gradient(
-    67deg,
-    rgb(0 0 0 / 100%) 0%,
-    rgb(25 54 34 / 100%) 60%,
-    rgb(18 18 18 / 100%) 100%
-  );
+    height: ${theme.spacing(200)};
+
+    background: ${theme.colors.black};
+    background: linear-gradient(${theme.linearGradient.header});
+    ${theme.media.lg`
+      justify-content: flex-start;
+      height: ${theme.spacing(400)};
+      `}
+  `}
 `;
 
-export const StyledHeaderText = styled.h1`
-  font-size: 38px;
-  color: rgb(0 206 44);
-  color: linear-gradient(
-    180deg,
-    rgb(0 206 44 / 100%) 0%,
-    rgb(174 223 35 / 100%) 3%,
-    rgb(163 220 0 / 100%) 72%
-  );
+export const MainText = styled.p`
+  ${({ theme }) => css`
+    ${theme.typography.variant.h1}
+    margin: 0 auto;
+
+    color: transparent;
+    text-align: center;
+    word-break: normal;
+
+    background-image: linear-gradient(${theme.linearGradient.headerText});
+    background-clip: text;
+    filter: drop-shadow(${theme.boxShadow.header});
+    ${theme.media.lg`
+      margin-right: ${theme.spacing(48)};
+      text-align: right;
+      `}
+  `}
 `;
 
-export const StyledHeaderSubText = styled.h3`
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.gray};
+export const SubText = styled.p`
+  ${({ theme }) => css`
+    margin: 0 auto;
+    margin-top: 0;
+
+    ${theme.typography.variant.p1}
+    color: ${theme.colors.gray1};
+    text-align: center;
+    text-shadow: ${theme.boxShadow.subheader};
+    word-break: normal;
+  `}
+`;
+
+export const LogoContainer = styled.div`
+  ${({ theme }) => css`
+    display: none;
+    width: ${theme.spacing(12)};
+    height: ${theme.spacing(12)};
+
+    ${theme.media.lg`
+      display: flex;
+      width: ${theme.spacing(300)};
+      height: ${theme.spacing(300)};
+      `}
+  `}
+`;
+
+export const HeaderLogo = styled(Logo)`
+  ${({ theme }) => css`
+    display: none;
+    width: ${theme.spacing(12)};
+    height: ${theme.spacing(12)};
+
+    ${theme.media.lg`
+      display: flex;
+      width: ${theme.spacing(300)};
+      height: ${theme.spacing(300)};
+      `}
+  `}
+`;
+
+export const TextContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ${theme.media.lg`
+      align-items: end;
+      `}
+  `}
+`;
+
+export const MainTextContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+
+    ${theme.media.lg`
+      align-items: end;`}
+  `}
+`;
+
+export const SubTextContainer = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+
+    ${theme.media.lg`
+      align-items: end;
+      `}
+  `}
+`;
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    height: ${theme.spacing(150)};
+
+    ${theme.media.lg`
+      display: flex;
+      flex-direction: row;
+      height: ${theme.spacing(300)};
+      margin-left: ${theme.spacing(72)};
+      `}
+  `}
 `;

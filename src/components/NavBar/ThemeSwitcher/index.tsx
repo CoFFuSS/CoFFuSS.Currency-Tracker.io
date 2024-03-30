@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import propTypes from 'prop-types';
-
-import { ToggleSwitch } from './styled';
 
 import themeSwitcher from '@/store';
 
-export const ThemeSwitcher = (): JSX.Element => {
-  const [isChecked, setIsChecked] = useState(false);
+import { Switcher } from './styled';
+
+export const ThemeSwitcher = () => {
+  const [isChecked, setIsChecked] = useState(() => themeSwitcher.themeName !== 'dark');
 
   const handleToggle = () => {
     themeSwitcher.toggleTheme();
@@ -14,15 +13,13 @@ export const ThemeSwitcher = (): JSX.Element => {
   };
 
   return (
-    <>
-      <ToggleSwitch
-        checked={isChecked}
-        onClick={handleToggle}
+    <Switcher checked={isChecked}>
+      <input
+        name='themeSwitcher'
+        onChange={handleToggle}
+        id='checkbox'
+        type='checkbox'
       />
-    </>
+    </Switcher>
   );
-};
-
-ThemeSwitcher.propType = {
-  isChecked: propTypes.bool,
 };

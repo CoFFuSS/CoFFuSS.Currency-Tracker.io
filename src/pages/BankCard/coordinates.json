@@ -1,0 +1,71 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "BTC",
+        "description": "Bank witch takes Bitcoin"
+      },
+      "geometry": {
+        "coordinates": [30.205418, 55.189924],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "BTC",
+        "description": "Bank witch takes Bitcoin"
+      },
+      "geometry": {
+        "coordinates": [30.205871, 55.192406],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "EUR",
+        "description": "Bank witch takes Euro"
+      },
+      "geometry": {
+        "coordinates": [30.205484, 55.1907],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "EUR",
+        "description": "Bank witch takes Euro"
+      },
+      "geometry": {
+        "coordinates": [30.205937, 55.189828],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "USD",
+        "description": "Bank witch takes Dollar"
+      },
+      "geometry": {
+        "coordinates": [30.207396, 55.182335],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "USD",
+        "description": "Bank witch takes Dollar"
+      },
+      "geometry": {
+        "coordinates": [30.205418, 55.189924],
+        "type": "Point"
+      }
+    }
+  ],
+  "type": "FeatureCollection"
+}

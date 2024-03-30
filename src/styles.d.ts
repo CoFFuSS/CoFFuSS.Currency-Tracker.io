@@ -1,3 +1,6 @@
+import { Theme } from '@/types/theme';
+import 'styled-components';
+
 declare module '*.module.css' {
   interface ClassNames {
     [className: string]: string;
@@ -5,12 +8,6 @@ declare module '*.module.css' {
   const classNames: ClassNames;
   export = classNames;
 }
-
-declare module '*.module.scss' {
-  interface ClassNames {
-    [className: string]: string;
-  }
-
-  const classNames: ClassNames;
-  export = classNames;
+declare module 'styled-components' {
+  export interface DefaultTheme extends Theme {}
 }

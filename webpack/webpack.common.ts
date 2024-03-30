@@ -1,8 +1,8 @@
-/* eslint-disable import/no-import-module-exports */
 /* eslint-disable import/no-extraneous-dependencies */
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { Configuration, ProgressPlugin } from 'webpack';
+import Dotenv from 'dotenv-webpack';
 
 import path from 'path';
 
@@ -87,14 +87,16 @@ const commonConfig: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(PATHS.public, 'index.html'),
+      template: path.resolve(__dirname, '..', 'public', 'index.html'),
     }),
     new ProgressPlugin((percentage, message, ...args) => {
       console.info(percentage, message, ...args);
+    }),
+    new Dotenv({
+      path: './.env',
+      allowEmptyValues: true,
     }),
   ],
 };
 
 export default commonConfig;
-
-module.exports = commonConfig;

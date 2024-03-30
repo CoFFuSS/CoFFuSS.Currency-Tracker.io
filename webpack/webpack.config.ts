@@ -8,9 +8,7 @@ import commonConfig from './webpack.common';
 const config: ConfigFunc = (env, argv) => {
   const { env: currentEnv } = env;
 
-  const envConfig = (
-    currentEnv === 'dev' ? devConfig : prodConfig
-  ) as ConfigFunc;
+  const envConfig = (currentEnv === 'dev' ? devConfig : prodConfig) as ConfigFunc;
 
   return merge(commonConfig, envConfig(env, argv));
 };

@@ -1,5 +1,5 @@
 import { BankCardPage } from '@/pages/BankCard';
-import { ContatoPage } from '@/pages/Contato';
+import { ContactPage } from '@/pages/Contact';
 import { HomePage } from '@/pages/Home';
 import { TimelinePage } from '@/pages/Timeline';
 
@@ -10,7 +10,7 @@ export const ROUTES = [
   },
   {
     path: 'contact',
-    element: <ContatoPage />,
+    element: <ContactPage />,
   },
   {
     path: 'bankcard',
@@ -20,4 +20,4 @@ export const ROUTES = [
     path: 'timeline',
     element: <TimelinePage />,
   },
-];
+] as const;

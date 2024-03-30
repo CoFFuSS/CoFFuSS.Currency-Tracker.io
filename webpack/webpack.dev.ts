@@ -20,6 +20,7 @@ const devConfig: ConfigFunc<'dev'> = ({ env }) => {
       PluginBuilder.createProcessEnvVariablesPlugin({ env: envMode }),
       new ReactRefreshWebpackPlugin(),
     ],
+
     module: {
       rules: [
         RuleBuilder.createBabelTsRule([ReactRefreshTypeScript()]),

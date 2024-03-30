@@ -1,18 +1,24 @@
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { ErrorBoundary } from 'react-error-boundary';
 
-import { App } from '@/components/App';
+import App from '@/components/App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
+async function enableMocking() {
+  const { worker } = await import('./mocks/browser');
 
-root.render(
-  <ErrorBoundary fallback={<h1>Opps, something went wrong!</h1>}>
+  return worker.start({
+    findWorker(scriptUrl) {
+      return scriptUrl.includes('mockServiceWorker');
+    },
+  });
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
+enableMocking().then(() => {
+  root.render(
     <BrowserRouter>
       <App />
-    </BrowserRouter>
-  </ErrorBoundary>,
-);
+    </BrowserRouter>,
+  );
+});

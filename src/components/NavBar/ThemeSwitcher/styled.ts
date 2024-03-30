@@ -1,34 +1,44 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-import { styled } from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ToggleSwitch = styled.div<{ checked: boolean }>`
-  cursor: pointer;
+export const Switcher = styled.label<{ checked: boolean }>`
+  ${({ theme, checked }) => css`
+    cursor: pointer;
 
-  position: relative;
+    position: relative;
 
-  width: 30px;
-  height: 15px;
+    display: block;
 
-  background-color: ${({ theme }) => theme.backgroundColor};
-  border: 1px solid ${({ theme }) => theme.reverseColor};
-  border-radius: 20px;
+    width: ${theme.spacing(30)};
+    height: ${theme.spacing(15)};
 
-  transition: background-color 0.3s;
+    text-indent: -9999px;
 
-  &::before {
-    content: '';
+    background: ${theme.colors.primary};
+    border: ${theme.spacing(1)} solid ${theme.colors.secondary};
+    border-radius: ${theme.spacing(100)};
 
-    position: absolute;
-    left: ${({ checked }) => (checked ? 'calc(100% - 15px)' : '0px')};
+    &::after {
+      content: '';
 
-    width: 15px;
-    height: 15px;
+      position: absolute;
+      left: ${checked ? 'calc(100% - 48%)' : '-0.5px'};
 
-    background-color: ${({ theme }) => theme.reverseColor};
-    border-radius: 50%;
+      width: ${theme.spacing(13)};
+      height: ${theme.spacing(13)};
 
-    transition:
-      left 0.3s,
-      background-color 0.3s;
-  }
+      background: ${theme.colors.secondary};
+      border: 1px solid ${theme.colors.secondary};
+      border-radius: ${theme.spacing(90)};
+
+      transition: 0.3s;
+      ${theme.media.lg`
+        width: ${theme.spacing(22)};
+        height: ${theme.spacing(23)};
+        `}
+    }
+    ${theme.media.lg`
+      width: ${theme.spacing(48)};
+      height: ${theme.spacing(24)};
+      `}
+  `}
 `;
