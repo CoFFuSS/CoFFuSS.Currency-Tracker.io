@@ -6,9 +6,10 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 
+import zlib from 'zlib';
 import path from 'path';
 
-import { ENV_MODE_MAP, FILES_THRESHOLD, PATHS } from './common/constants';
+import { ENV_MODE_MAP, PATHS } from './common/constants';
 import { RuleBuilder } from './builders/rule';
 import { PluginBuilder } from './builders/plugin';
 import { ConfigFunc } from './types/env';
@@ -51,20 +52,21 @@ const prodConfig: ConfigFunc<'prod'> = ({ env }) => {
       ],
       splitChunks: {
         chunks: 'async',
-        minSize: 20000,
-        maxSize: 512000,
+        minSize: 25600,
         minRemainingSize: 0,
         minChunks: 1,
         maxAsyncRequests: 30,
         maxInitialRequests: 30,
-        enforceSizeThreshold: 50000,
         cacheGroups: {
           defaultVendors: {
+            chunks: 'all',
+            name: 'node-vendors',
             test: /[\\/]node_modules[\\/]/,
             priority: -10,
             reuseExistingChunk: true,
           },
           default: {
+            chunks: 'async',
             minChunks: 2,
             priority: -20,
             reuseExistingChunk: true,
@@ -81,17 +83,20 @@ const prodConfig: ConfigFunc<'prod'> = ({ env }) => {
     plugins: [
       PluginBuilder.createProcessEnvVariablesPlugin({ env: envMode }),
       new CompressionPlugin({
-        threshold: FILES_THRESHOLD,
+        filename: '[path][base].br',
+        algorithm: zlib.brotliCompress,
+        test: /\.(js|css|html|svg)$/,
+        compressionOptions: {
+          level: 11,
+        },
+        minRatio: 0.8,
+        deleteOriginalAssets: false,
       }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css',
         chunkFilename: 'css/[name].[contenthash:8].css',
       }),
-      // new BundleAnalyzerPlugin({
-      //   analyzerMode: mode === 'development' ? 'disabled' : 'server',
-      //   analyzerPort: +PORT,
-      //   analyzerHost: HOST,
-      // }),
+
       new ForkTsCheckerWebpackPlugin(),
       new CopyPlugin({
         patterns: [

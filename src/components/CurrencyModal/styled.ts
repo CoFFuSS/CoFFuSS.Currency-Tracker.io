@@ -1,7 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
 
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: fixed;
@@ -16,9 +14,8 @@ export const Wrapper = styled.div`
     outline: 0;
 
     ${theme.media.lg`
-    width: ${theme.spacing(600)};
-
-		`}
+      width: ${theme.spacing(600)};
+      `}
   `}
 `;
 
@@ -34,7 +31,7 @@ export const Backdrop = styled.div`
   background: rgb(0 0 0 / 30%);
 `;
 
-const ModalOpenAnimation = keyframes`
+const modalOpenAnimation = keyframes`
   0% {
     opacity: 0;
     transform: scale(0.7);
@@ -45,7 +42,7 @@ const ModalOpenAnimation = keyframes`
   }
 `;
 
-const ModalCloseAnimation = keyframes`
+const modalCloseAnimation = keyframes`
   0% {
     opacity: 1;
     transform: scale(1);
@@ -56,7 +53,7 @@ const ModalCloseAnimation = keyframes`
   }
 `;
 
-export const StyledModal = styled.div<{ isShown: boolean }>`
+export const ModalWindow = styled.div<{ isShown: boolean }>`
   ${({ theme, isShown }) => css`
     position: relative;
     z-index: 100;
@@ -70,10 +67,10 @@ export const StyledModal = styled.div<{ isShown: boolean }>`
 
     ${isShown
       ? css`
-          animation: ${ModalOpenAnimation} 0.3s forwards;
+          animation: ${modalOpenAnimation} 0.3s forwards;
         `
       : css`
-          animation: ${ModalCloseAnimation} 0.3s forwards;
+          animation: ${modalCloseAnimation} 0.3s forwards;
         `}
   `}
 `;
@@ -130,8 +127,8 @@ export const Content = styled.div`
     height: ${theme.spacing(150)};
     padding: ${theme.spacing(10)};
     ${theme.media.lg`
-			height: ${theme.spacing(200)};
-		`}
+      height: ${theme.spacing(200)};
+      `}
   `}
 `;
 
@@ -145,9 +142,9 @@ export const InfoContainer = styled.div`
     margin-bottom: ${theme.spacing(10)};
 
     ${theme.media.lg`
-    	width: ${theme.spacing(400)};
-			align-items: center;		
-		`}
+      width: ${theme.spacing(400)};
+      align-items: center;
+      `}
   `}
 `;
 

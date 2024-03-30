@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import styled, { css } from 'styled-components';
 
-import TimeImage from '@/assets/images/circle animation.svg';
+import Icon from '@/assets/images/circle animation.svg';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -27,7 +26,7 @@ export const LoadingText = styled.p`
   `}
 `;
 
-export const StyledTimeImage = styled(TimeImage)`
+export const TimeUpdateImage = styled(Icon)`
   ${({ theme }) => css`
     width: ${theme.spacing(33)};
     height: ${theme.spacing(33)};

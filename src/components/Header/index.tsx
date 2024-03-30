@@ -2,7 +2,7 @@ import {
   TextContainer,
   SubText,
   LogoContainer,
-  StyledHeaderLogo,
+  HeaderLogo,
   HeaderContainer,
   MainText,
   Content,
@@ -24,7 +24,7 @@ export const Header = () => (
       </TextContainer>
 
       <LogoContainer>
-        <StyledHeaderLogo />
+        <HeaderLogo />
       </LogoContainer>
     </Content>
   </HeaderContainer>

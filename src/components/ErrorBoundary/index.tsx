@@ -1,5 +1,3 @@
-/* eslint-disable react/state-in-constructor */
-/* eslint-disable react/destructuring-assignment */
 import { Component, ErrorInfo, ReactNode } from 'react';
 
 import { NavBar } from '@/components/NavBar';
@@ -17,9 +15,13 @@ interface State {
 }
 
 export class ErrorBoundary extends Component<Props, State> {
-  public state: State = {
-    hasError: false,
-  };
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      hasError: false,
+    };
+  }
 
   public static getDerivedStateFromError(_: Error): State {
     // Update state so the next render will show the fallback UI.
@@ -31,7 +33,10 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state;
+    const { children } = this.props;
+
+    if (hasError) {
       return (
         <PageWrapper>
           <PageContainer>
@@ -46,6 +51,6 @@ export class ErrorBoundary extends Component<Props, State> {
       );
     }
 
-    return this.props.children;
+    return children;
   }
 }

@@ -34,7 +34,7 @@ export const lightTheme = {
     secondary: THEME_COLORS.black,
     gray5: '#3d3d3d',
   },
-};
+} as const;
 
 export const darkTheme = {
   ...basicTheme,
@@ -43,4 +43,4 @@ export const darkTheme = {
     primary: THEME_COLORS.black,
     secondary: THEME_COLORS.white,
   },
-};
+} as const;

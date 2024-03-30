@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 
-import { Container, StyledList, StyledOption } from './styled';
+import { Container, List, Options } from './styled';
 
 interface CurrenciesListProps {
   currenciesList: string[];
@@ -22,15 +22,15 @@ export const CurrenciesList = ({
 
   return (
     <Container>
-      <StyledList
+      <List
         onChange={handleChange}
         disabled={disable}
       >
-        <StyledOption key={defaultValue}>{defaultValue}</StyledOption>
+        <Options key={defaultValue}>{defaultValue}</Options>
         {currenciesList.map((currency) => (
-          <StyledOption key={currency}>{currency}</StyledOption>
+          <Options key={currency}>{currency}</Options>
         ))}
-      </StyledList>
+      </List>
     </Container>
   );
 };

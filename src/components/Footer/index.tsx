@@ -6,10 +6,10 @@ import {
   Content,
   Copyright,
   CopyrightText,
+  FooterLogo,
   InfoBlock,
   InfoText,
   LogoContainer,
-  StyledLogo,
   Title,
   TitleBlock,
 } from './styled';
@@ -20,7 +20,7 @@ export const Footer = () => (
       <InfoBlock>
         <TitleBlock>
           <LogoContainer>
-            <StyledLogo />
+            <FooterLogo />
           </LogoContainer>
           <Title>Modsen Currency Tracker</Title>
         </TitleBlock>

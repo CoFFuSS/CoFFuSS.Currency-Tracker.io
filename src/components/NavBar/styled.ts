@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +21,9 @@ export const Container = styled.nav`
     padding-left: ${theme.spacing(30)};
 
     background-color: ${theme.colors.primary};
-    ${theme.media.lg`height: ${theme.spacing(100)}`}
+    ${theme.media.lg`
+      height: ${theme.spacing(100)}
+      `}
   `}
 `;
 
@@ -31,18 +32,20 @@ export const ImageContainer = styled(Link)`
     width: ${theme.spacing(30)};
     height: ${theme.spacing(12)};
     ${theme.media.lg`
-		width: ${theme.spacing(40)};
-    height: ${theme.spacing(40)};`}
+      width: ${theme.spacing(40)};
+      height: ${theme.spacing(40)};
+      `}
   `};
 `;
 
-export const StyledLogo = styled(Logo)`
+export const NavBarLogo = styled(Logo)`
   ${({ theme }) => css`
     cursor: pointer;
     width: ${theme.spacing(12)};
     height: ${theme.spacing(12)};
     ${theme.media.lg`
-		width: ${theme.spacing(40)};
-    height: ${theme.spacing(40)};`}
+      width: ${theme.spacing(40)};
+      height: ${theme.spacing(40)};
+      `}
   `};
 `;

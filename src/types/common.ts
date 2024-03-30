@@ -3,5 +3,5 @@ export interface CurrencyResponse {
     last_updated_at: string;
   };
 
-  data: Record<string, { code: string; value: string }>;
+  data: Record<string, { code: string; value: number }>;
 }

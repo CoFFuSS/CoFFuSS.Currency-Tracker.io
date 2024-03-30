@@ -9,17 +9,11 @@ export const ChartContainer = styled.div`
   `}
 `;
 
-export const StyledLabel = styled.label`
+export const InputLabel = styled.label`
   ${({ theme }) => css`
     ${theme.typography.variant.h6};
     color: ${theme.colors.secondary};
   `}
-`;
-
-export const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 `;
 
 export const ControlBlock = styled.div`
@@ -31,20 +25,30 @@ export const ControlBlock = styled.div`
   `}
 `;
 
-export const StyledInput = styled.input`
+export const ChartInput = styled.input`
   ${({ theme }) => css`
     ${theme.typography.variant.h6}
     width: ${theme.spacing(70)};
     max-width: ${theme.spacing(150)};
     margin-left: ${theme.spacing(8)};
     border-radius: ${theme.spacing(20)};
-    ${theme.media.lg`min-width: ${theme.spacing(130)};`}
+    ${theme.media.lg`
+      min-width: ${theme.spacing(130)};`}
   `}
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ErrorMessage = styled.p`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacing(12)};
+    ${theme.typography.variant.h6};
+    color: ${theme.colors.secondary};
+  `}
 `;
 
 const fadeIn = keyframes`

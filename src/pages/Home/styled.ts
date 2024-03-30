@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import styled, { css } from 'styled-components';
 
-import LoadingImage from '@/assets/images/loadingImage.svg';
+import Icon from '@/assets/images/loadingImage.svg';
 
 export const Container = styled.section`
   ${({ theme }) => css`
@@ -13,12 +12,12 @@ export const Container = styled.section`
     padding-bottom: ${theme.spacing(150)};
 
     ${theme.media.lg`
-			margin: ${theme.spacing(32, 120, 0, 120)};
-		`}
+      margin: ${theme.spacing(32, 120, 0, 120)};
+      `}
   `}
 `;
 
-export const StyledSection = styled.div`
+export const CardSection = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
@@ -35,15 +34,14 @@ export const CardContainer = styled.div`
     flex-direction: column;
     row-gap: ${theme.spacing(20)};
     ${theme.media.md`
-			flex-direction: row;
-			row-gap: 0;
-			display: default;
-    	flex-wrap: wrap;
-    	gap: ${theme.spacing(20)};
-    	justify-content: space-between;
-
-    	margin-bottom: ${theme.spacing(32)};
-	`}
+      flex-direction: row;
+      row-gap: 0;
+      display: default;
+      flex-wrap: wrap;
+      gap: ${theme.spacing(20)};
+      justify-content: space-between;
+      margin-bottom: ${theme.spacing(32)};
+      `}
   `}
 `;
 
@@ -69,11 +67,11 @@ export const Card = styled.div`
     border-radius: ${theme.spacing(3)};
 
     ${theme.media.md`
-			width: calc(50% - ${theme.spacing(120)});
-			max-width: ${theme.spacing(520)};
-    	flex-basis: calc(50% - ${theme.spacing(120)});
-    	flex-grow: 0;
-		`}
+      width: calc(50% - ${theme.spacing(120)});
+      max-width: ${theme.spacing(520)};
+      flex-basis: calc(50% - ${theme.spacing(120)});
+      flex-grow: 0;
+      `}
   `}
 `;
 
@@ -126,7 +124,7 @@ export const CardPrice = styled.p`
   `}
 `;
 
-export const StyledLoadingImage = styled(LoadingImage)`
+export const LoadingImage = styled(Icon)`
   ${({ theme }) => css`
     display: flex;
     align-self: center;
@@ -135,8 +133,8 @@ export const StyledLoadingImage = styled(LoadingImage)`
     width: ${theme.spacing(216)};
     height: ${theme.spacing(216)};
     ${theme.media.lg`
-		  width: ${theme.spacing(460)};
-    	height: ${theme.spacing(460)};
-		`}
+      width: ${theme.spacing(460)};
+      height: ${theme.spacing(460)};
+      `}
   `}
 `;

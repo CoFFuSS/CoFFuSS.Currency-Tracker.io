@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Container, Content, InnerText, StyledArrow, TitleText } from './styled';
+import { ArrowIcon, Container, Content, InnerText, TitleText, Wrapper } from './styled';
 
 interface ExpandableFieldProps {
   title: string;
@@ -15,14 +15,14 @@ export const ExpandableField = ({ title, content }: ExpandableFieldProps) => {
   };
 
   return (
-    <div>
+    <Wrapper>
       <Container onClick={handleToggle}>
         <TitleText>{title}</TitleText>
-        <StyledArrow />
+        <ArrowIcon />
       </Container>
       <Content isOpen={isOpen}>
         <InnerText>{content}</InnerText>
       </Content>
-    </div>
+    </Wrapper>
   );
 };

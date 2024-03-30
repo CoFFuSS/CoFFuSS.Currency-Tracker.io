@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import LoadingImage from '@/assets/images/loadingImage.svg';
+import Icon from '@/assets/images/loadingImage.svg';
 
 export const MapContainer = styled.div`
   ${({ theme }) => css`
@@ -8,8 +8,8 @@ export const MapContainer = styled.div`
     margin-bottom: ${theme.spacing(400)};
 
     ${theme.media.lg`
-    	height: ${theme.spacing(460)};
-		`}
+      height: ${theme.spacing(460)};
+      `}
   `}
 `;
 
@@ -37,15 +37,15 @@ export const SearchAdvise = styled.p`
   `}
 `;
 
-export const StyledInput = styled.input`
+export const SearchInput = styled.input`
   ${({ theme }) => css`
     width: ${theme.spacing(200)};
     height: ${theme.spacing(30)};
 
-    ${theme.media.lg`    
-			width: ${theme.spacing(400)};
-    	height: ${theme.spacing(25)};
-`}
+    ${theme.media.lg`
+      width: ${theme.spacing(400)};
+      height: ${theme.spacing(25)};
+      `}
     ${theme.typography.variant.h6}
     background-color: ${theme.colors.gray5};
     border: ${theme.spacing(20)} solid ${theme.colors.gray5};
@@ -61,7 +61,7 @@ export const StyledInput = styled.input`
   `}
 `;
 
-export const StyledLoadingImage = styled(LoadingImage)`
+export const LoadingImage = styled(Icon)`
   ${({ theme }) => css`
     display: flex;
     align-self: center;
@@ -70,8 +70,8 @@ export const StyledLoadingImage = styled(LoadingImage)`
     width: ${theme.spacing(216)};
     height: ${theme.spacing(216)};
     ${theme.media.lg`
-		  width: ${theme.spacing(460)};
-    	height: ${theme.spacing(460)};
-		`}
+      width: ${theme.spacing(460)};
+      height: ${theme.spacing(460)};
+      `}
   `}
 `;

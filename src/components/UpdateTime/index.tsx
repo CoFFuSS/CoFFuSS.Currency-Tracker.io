@@ -1,19 +1,11 @@
 import { useCurrencyRequest } from '@/hooks/useCurrencyRequest';
+import { useFormattedDate } from '@/hooks/useFormattedDate';
 
-import { Container, LastUpdate, LoadingText, StyledTimeImage } from './styled';
+import { Container, LastUpdate, LoadingText, TimeUpdateImage } from './styled';
 
 export const UpdateTime = () => {
-  const { currency, loading } = useCurrencyRequest();
-
-  const formatDate = () => {
-    const date = new Date(currency?.meta.last_updated_at as string);
-    const hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-
-    const ampm = date.getHours() >= 12 ? 'pm' : 'am';
-
-    return `${hours}:${minutes}${ampm}`;
-  };
+  const [currency, loading] = useCurrencyRequest();
+  const formattedDate = useFormattedDate(currency?.meta.last_updated_at as string);
 
   return (
     <Container>
@@ -21,8 +13,8 @@ export const UpdateTime = () => {
         <LoadingText>Loading...</LoadingText>
       ) : (
         <>
-          <StyledTimeImage />
-          <LastUpdate>Last updated ad {formatDate()}</LastUpdate>
+          <TimeUpdateImage />
+          <LastUpdate>Last updated ad {formattedDate}</LastUpdate>
         </>
       )}
     </Container>

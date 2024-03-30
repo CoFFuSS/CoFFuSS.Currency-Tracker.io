@@ -17,4 +17,4 @@ export const options = {
       name: 'Contact',
     },
   ],
-};
+} as const;

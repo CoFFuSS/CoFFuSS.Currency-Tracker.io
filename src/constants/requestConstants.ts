@@ -42,8 +42,8 @@ export const response = {
       value: 1,
     },
   },
-};
+} as const;
 
 export const STORAGE_KEYS = {
   theme: 'theme',
-};
+} as const;

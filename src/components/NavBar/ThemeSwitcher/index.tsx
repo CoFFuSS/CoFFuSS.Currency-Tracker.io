@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import themeSwitcher from '@/store';
 
-import { StyledLabel } from './styled';
+import { Switcher } from './styled';
 
 export const ThemeSwitcher = () => {
   const [isChecked, setIsChecked] = useState(() => themeSwitcher.themeName !== 'dark');
@@ -13,12 +13,13 @@ export const ThemeSwitcher = () => {
   };
 
   return (
-    <StyledLabel checked={isChecked}>
+    <Switcher checked={isChecked}>
       <input
+        name='themeSwitcher'
         onChange={handleToggle}
         id='checkbox'
         type='checkbox'
       />
-    </StyledLabel>
+    </Switcher>
   );
 };

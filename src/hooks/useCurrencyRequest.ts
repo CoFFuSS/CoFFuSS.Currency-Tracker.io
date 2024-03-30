@@ -1,15 +1,14 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import { CACHE_LIFETIME } from '@/constants';
 import { CurrencyResponse } from '@/types/common';
+import { CACHE_LIFETIME } from '@/constants/requestConstants';
 
 export const useCurrencyRequest = () => {
   const [currency, setCurrency] = useState<CurrencyResponse | undefined>();
 
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
-  const [error, setError]: [string, (error: string) => void] = useState('');
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     const cache = localStorage.getItem('CurrencyCaches');
@@ -39,5 +38,5 @@ export const useCurrencyRequest = () => {
         });
   }, []);
 
-  return { currency, loading, error };
+  return [currency, loading, error] as const;
 };

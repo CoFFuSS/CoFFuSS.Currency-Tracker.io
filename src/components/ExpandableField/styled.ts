@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import styled, { css } from 'styled-components';
 
 import Icon from '@/assets/images/Down_Arrow.svg';
@@ -17,9 +16,9 @@ export const Container = styled.div`
 
     border-bottom: 1px solid ${theme.colors.gray4};
     ${theme.media.lg`
-		height: ${theme.spacing(44)};
-		border: none;
-		`}
+      height: ${theme.spacing(44)};
+      border: none;
+      `}
   `}
 `;
 
@@ -29,8 +28,8 @@ export const Content = styled.div<{ isOpen: boolean }>`
     margin: ${theme.spacing(0, 40)};
     background-color: ${theme.colors.primary};
     ${theme.media.lg`
-		display: flex;
-		`}
+      display: flex;
+      `}
   `}
 `;
 
@@ -38,8 +37,6 @@ export const InnerText = styled.div`
   ${({ theme }) => css`
     ${theme.typography.variant.h5};
     color: ${theme.colors.gray5};
-    ${theme.media.lg`
-		`}
   `}
 `;
 
@@ -47,17 +44,19 @@ export const TitleText = styled.span`
   ${({ theme }) => css`
     color: ${theme.colors.secondary};
     ${theme.typography.variant.h4}
-    ${theme.media.lg`
-		`}
   `}
 `;
 
-export const StyledArrow = styled(Icon)`
+export const ArrowIcon = styled(Icon)`
   ${({ theme }) => css`
     fill: ${theme.colors.secondary};
 
     ${theme.media.lg`
-		display: none;
-	`}
+      display: none;
+      `}
   `}
+`;
+
+export const Wrapper = styled.div`
+  display: inline-block;
 `;

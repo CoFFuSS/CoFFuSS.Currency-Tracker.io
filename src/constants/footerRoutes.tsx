@@ -1,4 +1,4 @@
-import { StyledLink } from '@/components/Footer/styled';
+import { FooterLink } from '@/components/Footer/styled';
 
 export const routesOptions = [
   {
@@ -6,14 +6,13 @@ export const routesOptions = [
     content: (
       <>
         {['Market', 'Service'].map((link, index) => (
-          <div key={index}>
-            <StyledLink
-              to={link}
-              name-link={link}
-            >
-              {link}
-            </StyledLink>
-          </div>
+          <FooterLink
+            key={index}
+            to={link}
+            name-link={link}
+          >
+            {link}
+          </FooterLink>
         ))}
       </>
     ),
@@ -23,14 +22,13 @@ export const routesOptions = [
     content: (
       <>
         {['Sparks', 'Snaps'].map((link, index) => (
-          <div key={index}>
-            <StyledLink
-              to={link}
-              name-link={link}
-            >
-              {link}
-            </StyledLink>
-          </div>
+          <FooterLink
+            key={index}
+            to={link}
+            name-link={link}
+          >
+            {link}
+          </FooterLink>
         ))}
       </>
     ),
@@ -40,16 +38,15 @@ export const routesOptions = [
     content: (
       <>
         {['Ideas', 'Streams'].map((link, index) => (
-          <div key={index}>
-            <StyledLink
-              to={link}
-              name-link={link}
-            >
-              {link}
-            </StyledLink>
-          </div>
+          <FooterLink
+            key={index}
+            to={link}
+            name-link={link}
+          >
+            {link}
+          </FooterLink>
         ))}
       </>
     ),
   },
-];
+] as const;

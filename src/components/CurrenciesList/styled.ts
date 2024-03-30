@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import styled, { css, keyframes } from 'styled-components';
 
 export const Container = styled.div`
@@ -9,12 +8,12 @@ export const Container = styled.div`
   `}
 `;
 
-const FadeIn = keyframes`
+const fadeIn = keyframes`
   0% { opacity: 0; transform: translateY(2rem); }
   100% { opacity: 1; transform: translateY(0); }
 `;
 
-export const StyledList = styled.select`
+export const List = styled.select`
   ${({ theme }) => css`
     cursor: pointer;
 
@@ -31,7 +30,7 @@ export const StyledList = styled.select`
     transition:
       transform 0.3s ease,
       opacity 0.3s ease;
-    animation: ${FadeIn} 0.2s ease-in-out;
+    animation: ${fadeIn} 0.2s ease-in-out;
 		background: ${theme.colors.gray5}
 
     &:disabled {
@@ -57,7 +56,7 @@ export const StyledList = styled.select`
   `}
 `;
 
-export const StyledOption = styled.option`
+export const Options = styled.option`
   ${({ theme }) => css`
     display: flex;
     justify-content: center;

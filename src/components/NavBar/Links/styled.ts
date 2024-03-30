@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
-export const StyledLink = styled(Link)`
+export const NamedLink = styled(Link)`
   ${({ theme }) => css`
     ${theme.typography.variant.h6}
     color: ${theme.colors.secondary};

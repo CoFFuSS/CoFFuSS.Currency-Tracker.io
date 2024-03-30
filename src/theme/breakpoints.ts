@@ -6,7 +6,7 @@ export const THEME_BREAKPOINTS = {
   md: '900px',
   lg: '1200px',
   xl: '1546px',
-};
+} as const;
 
 type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 type Accumulator = {

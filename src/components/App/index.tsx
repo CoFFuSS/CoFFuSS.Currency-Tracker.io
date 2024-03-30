@@ -1,11 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { observer } from 'mobx-react-lite';
 
 import themeSwitcher from '@/store';
 import { BasicLayout } from '@/components/BasicLayout';
-import ROUTES from '@/constants/navRoutes';
+import { ROUTES } from '@/constants/navRoutes';
 
 import { GlobalStyle } from './styled';
 

@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { useCurrencyModal } from '@/hooks/useCurrencyModal';
 import { CurrencyModal } from '@/components/CurrencyModal';
 import { CurrenciesList } from '@/components/CurrenciesList';
-import { CurrencyIcons } from '@/constants';
 import { getCurrenciesName, getDefinedPrice } from '@/utils/mainPage';
 import { useCurrencyRequest } from '@/hooks/useCurrencyRequest';
+import { CurrencyIcons } from '@/constants/currencyIcons';
 
 import {
   Card,
@@ -16,16 +16,16 @@ import {
   CardPrice,
   Container,
   SectionName,
-  StyledLoadingImage,
-  StyledSection,
+  CardSection,
   SvgIcon,
+  LoadingImage,
 } from './styled';
 
 export const HomePage = () => {
   const [selectedCurrency, setSelectedCurrency] = useState<string>('USD');
   const [cardCurrency, setCardCurrency] = useState<string>('USD');
-  const { isShown, toggle } = useCurrencyModal();
-  const { currency, loading, error } = useCurrencyRequest();
+  const [isShown, toggle] = useCurrencyModal();
+  const [currency, loading, error] = useCurrencyRequest();
 
   const handleCardClick = (coinCode: string) => () => {
     setCardCurrency(coinCode);
@@ -41,10 +41,10 @@ export const HomePage = () => {
         disable={false}
       />
       {loading ? (
-        <StyledLoadingImage>Loading</StyledLoadingImage>
+        <LoadingImage />
       ) : (
         <>
-          <StyledSection>
+          <CardSection>
             <CurrencyModal
               isShown={isShown}
               hide={toggle}
@@ -58,6 +58,7 @@ export const HomePage = () => {
                 <Card
                   key={coin.code}
                   onClick={handleCardClick(coin.code)}
+                  data-test-id={`currency-card-${coin.code}`}
                 >
                   <CardItem>
                     {CurrencyIcons.QUOTES_SECTION.filter((item) => item.name === coin.code).map(
@@ -69,14 +70,14 @@ export const HomePage = () => {
                     <CardInfo>
                       <CardCurrency>{coin.code}</CardCurrency>
                       <CardPrice>
-                        {getDefinedPrice(currency, selectedCurrency, coin.value)}
+                        {getDefinedPrice(currency, selectedCurrency, String(coin.value))}
                       </CardPrice>
                     </CardInfo>
                   </CardItem>
                 </Card>
               ))}
             </CardContainer>
-          </StyledSection>
+          </CardSection>
         </>
       )}
       {error && <p>Error: {error}</p>}

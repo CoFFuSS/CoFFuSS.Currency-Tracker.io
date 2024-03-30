@@ -20,9 +20,10 @@ export const Container = styled.section`
     align-items: center;
     justify-content: center;
     margin: ${theme.spacing(20, 20, 40, 20)};
+
     ${theme.media.lg`
-			margin: ${theme.spacing(40, 40, 100, 40)}
-		`}
+      margin: ${theme.spacing(40, 40, 100, 40)}
+      `}
   `}
 `;
 

@@ -48,4 +48,4 @@ export const CurrencyIcons = {
       name: 'ARS',
     },
   ],
-};
+} as const;

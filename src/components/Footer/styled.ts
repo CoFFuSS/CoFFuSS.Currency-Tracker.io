@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
@@ -8,20 +7,21 @@ export const Container = styled.footer`
   ${({ theme }) => css`
     justify-content: center;
     ${theme.media.lg`
-			display: flex;
+      display: flex;
       flex-direction: column;
-		`}
+      `}
   `}
 `;
 
 export const Content = styled.div`
   ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
     ${theme.media.lg`
-			display: flex;
-    	flex-direction: row;
-    	justify-content: space-between;
-    	margin: ${theme.spacing(0, 120)};
-	`}
+      flex-direction: row;
+      justify-content: space-between;
+      margin: ${theme.spacing(0, 120)};
+      `}
   `}
 `;
 
@@ -34,11 +34,11 @@ export const InfoBlock = styled.div`
     margin: ${theme.spacing(0, 40)};
     margin-bottom: ${theme.spacing(34)};
     ${theme.media.lg`
-			flex-direction: column;
-			height: ${theme.spacing(300)};
-			width: ${theme.spacing(500)};
-			margin: 0 auto;
-		`}
+      flex-direction: column;
+      height: ${theme.spacing(300)};
+      width: ${theme.spacing(500)};
+      margin: 0 auto;
+      `}
   `}
 `;
 
@@ -49,11 +49,11 @@ export const TitleBlock = styled.div`
     justify-content: center;
     margin: ${theme.spacing(0)} auto;
     ${theme.media.lg`
-			display: flex;
-			justify-content: flex-start;
-			margin: 0;
-			width: inherit;
-		`}
+      display: flex;
+      justify-content: flex-start;
+      margin: 0;
+      width: inherit;
+      `}
   `}
 `;
 
@@ -65,7 +65,7 @@ export const LogoContainer = styled.div`
   `}
 `;
 
-export const StyledLogo = styled(Logo)`
+export const FooterLogo = styled(Logo)`
   ${({ theme }) => css`
     display: flex;
     width: ${theme.spacing(30)};
@@ -84,8 +84,6 @@ export const Title = styled.p`
 
     background-image: linear-gradient(${theme.linearGradient.headerText});
     background-clip: text;
-    ${theme.media.lg`
-		`}
   `}
 `;
 
@@ -94,9 +92,9 @@ export const InfoText = styled.p`
     display: none;
     ${theme.typography.variant.h5}
     ${theme.media.lg`
-			display: flex;
-			color: ${theme.colors.secondary}
-		`}
+      display: flex;
+      color: ${theme.colors.secondary}
+      `}
   `}
 `;
 
@@ -114,17 +112,15 @@ export const CopyrightText = styled.p`
     ${theme.typography.variant.p2};
     color: ${theme.colors.gray5};
     ${theme.typography.variant.h5}
-    ${theme.media.lg`
-		`}
   `}
 `;
 
-export const StyledLink = styled(Link)`
+export const FooterLink = styled(Link)`
   ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
     color: ${theme.colors.gray5};
     text-decoration: none;
     ${theme.typography.variant.h5}
-    ${theme.media.lg`
-		`}
   `}
 `;

@@ -20,17 +20,17 @@ export const THEME_COLORS = {
 export const THEME_BOX_SHADOWS = {
   header: '0px 0px 3px #000000',
   subheader: '0px 3px 3px #00000080',
-};
+} as const;
 
 export const THEME_FONT_FAMILIES = {
   primary: 'Poppins, sans-serif',
   secondary: 'Poppins, system-ui',
-};
+} as const;
 
 export const THEME_LINEAR_GRADIENT = {
   header: '67deg, rgb(0 0 0 / 100%) 0%, rgb(25 54 34 / 100%) 60%, rgb(18 18 18 / 100%) 100%',
   headerText: '90.18deg, #00ce2c 0.18%, #aedf23 49.3%, #a3dc00 99.88%',
-};
+} as const;
 
 export const THEME_FONT_WEIGHT = {
   light: '100',
@@ -52,11 +52,11 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     line-height: ${58 / 39};
 
     ${media.lg`
-			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(76)};
-    	font-weight: 600;
-    	line-height: ${114 / 76};
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary};
+      font-size: ${pxToRem(76)};
+      font-weight: 600;
+      line-height: ${114 / 76};
+      `}
   `,
 
   h2: css`
@@ -66,11 +66,11 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     line-height: ${18 / 13};
 
     ${media.lg`
-			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(35)};
-    	font-weight: 400;
-    	line-height: ${50 / 35};
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary};
+      font-size: ${pxToRem(35)};
+      font-weight: 400;
+      line-height: ${50 / 35};
+      `}
   `,
   h3: css`
     font-family: ${THEME_FONT_FAMILIES.primary};
@@ -78,12 +78,11 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     font-weight: 300;
     line-height: ${16 / 12};
     ${media.lg`
-			
-			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(32)};
-    	font-weight: 300;
-    	line-height: ${41 / 32};
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary};
+      font-size: ${pxToRem(32)};
+      font-weight: 300;
+      line-height: ${41 / 32};
+      `}
   `,
   h4: css`
     font-family: ${THEME_FONT_FAMILIES.primary};
@@ -91,11 +90,11 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     font-weight: 400;
     line-height: ${24 / 16};
     ${media.lg`
-			font-family: ${THEME_FONT_FAMILIES.primary};
-    	font-size: ${pxToRem(28)};
-    	font-weight: 400;
-    	line-height: ${42 / 28};
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary};
+      font-size: ${pxToRem(28)};
+      font-weight: 400;
+      line-height: ${42 / 28};
+      `}
   `,
   h5: css`
     font-family: ${THEME_FONT_FAMILIES.primary};
@@ -104,11 +103,11 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     line-height: ${24 / 16};
 
     ${media.lg`
-			font-family: ${THEME_FONT_FAMILIES.primary};
-   		font-size: ${pxToRem(24)};
-   		font-weight: 400;
-   		line-height: ${36 / 24};
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary};
+      font-size: ${pxToRem(24)};
+      font-weight: 400;
+      line-height: ${36 / 24};
+      `}
   `,
   h6: css`
     font-family: ${THEME_FONT_FAMILIES.primary};
@@ -117,19 +116,19 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     line-height: ${12 / 10};
 
     ${media.lg`
-		font-family: ${THEME_FONT_FAMILIES.primary};
-    font-size: ${pxToRem(20)};
-    font-weight: 300;
-    line-height: ${41 / 20};
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary};
+      font-size: ${pxToRem(20)};
+      font-weight: 300;
+      line-height: ${41 / 20};
+      `}
   `,
   p1: css`
     ${media.xs`
-			font-family: ${THEME_FONT_FAMILIES.primary},
-    	font-size: ${pxToRem(12)},
-    	font-weight: 300,
-    	line-height: ${22 / 12},
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary},
+      font-size: ${pxToRem(12)},
+      font-weight: 300,
+      line-height: ${22 / 12},
+      `}
   `,
   p2: css`
     font-family: ${THEME_FONT_FAMILIES.primary};
@@ -138,11 +137,10 @@ export const THEME_TYPOGRAPHY_VARIANTS: TypographyVariants = {
     line-height: ${30 / 20};
 
     ${media.lg`
-			font-family: ${THEME_FONT_FAMILIES.primary};
-   		font-size: ${pxToRem(26)};
-   		font-weight: 600;
-   		line-height: ${39 / 26};
-
-		`}
+      font-family: ${THEME_FONT_FAMILIES.primary};
+      font-size: ${pxToRem(26)};
+      font-weight: 600;
+      line-height: ${39 / 26};
+      `}
   `,
-};
+} as const;

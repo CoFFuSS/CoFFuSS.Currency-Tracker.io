@@ -12,8 +12,5 @@ export const useCurrencyModal = () => {
     }
   }, [isShown]);
 
-  return {
-    isShown,
-    toggle,
-  };
+  return [isShown, toggle] as const;
 };

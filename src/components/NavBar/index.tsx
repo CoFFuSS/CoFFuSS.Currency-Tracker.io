@@ -1,11 +1,11 @@
-import { Container, ImageContainer, StyledLogo } from './styled';
+import { Container, ImageContainer, NavBarLogo } from './styled';
 import { LinkElement } from './Links';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export const NavBar = () => (
   <Container>
     <ImageContainer to='/'>
-      <StyledLogo />
+      <NavBarLogo />
     </ImageContainer>
     <LinkElement />
     <ThemeSwitcher />
